@@ -1,10 +1,25 @@
-import React from "react";
+import React ,{useState, useContext }from "react";
 import { Link } from "react-router-dom";
 import { Footer, Navbar } from "../components";
 
+import UserContext from '../context/UserContext'
+// import UserContextProvider from './context/UserContextProvider'
+
 const Login = () => {
+
+  const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+
+    const {setdata} = useContext(UserContext)
+    // sending this to usercontext using useContext hook for all these , where in that js file  a context is being created and that file is imported in userContextProvide.jsx and seyting up the value 
+    const handleSubmit =(e)=> {
+      e.preventDefault()
+      setdata({username , password}) ;       // sending username and password 
+     
+    } 
   return (
     <>
+    
       <Navbar />
       <div className="container my-3 py-3">
         <h1 className="text-center">Login</h1>
@@ -34,15 +49,18 @@ const Login = () => {
                 <p>New Here? <Link to="/register" className="text-decoration-underline text-info">Register</Link> </p>
               </div>
               <div className="text-center">
-                <button class="my-2 mx-auto btn btn-dark" type="submit" disabled>
+              <Link to="/" className="text-decoration-underline text-info">
+                <button class="my-2 mx-auto btn btn-dark" type="submit" onClick={handleSubmit}>
                   Login
                 </button>
+                </Link>
               </div>
             </form>
           </div>
         </div>
       </div>
       <Footer />
+     
     </>
   );
 };

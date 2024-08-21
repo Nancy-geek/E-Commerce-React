@@ -6,12 +6,15 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
+import UserContextProvider from './context/UserContextProvider'
 
-import { Home, Product, Products, AboutPage, ContactPage, Cart, Login, Register, Checkout, PageNotFound } from "./pages"
+
+import { Home, Product, Products, AboutPage, ContactPage, Cart, Login, Register, Checkout, PageNotFound, UserPage } from "./pages"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
+  <UserContextProvider>
     <Provider store={store}>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -25,7 +28,11 @@ root.render(
         <Route path="/checkout" element={<Checkout />} />
         <Route path="*" element={<PageNotFound />} />
         <Route path="/product/*" element={<PageNotFound />} />
+
+        <Route path="/user/*" element={<UserPage />} />
+        {/* <Route path="/home" element={<Home />} /> */}
       </Routes>
     </Provider>
+    </UserContextProvider>
   </BrowserRouter>
 );

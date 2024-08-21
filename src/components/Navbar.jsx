@@ -1,10 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+// import { FaUserAlt } from "react-icons/fa";
 
 const Navbar = () => {
     const state = useSelector(state => state.handleCart)
     return (
+        
         <nav className="navbar navbar-expand-lg navbar-light bg-light py-3 sticky-top">
             <div className="container">
                 <NavLink className="navbar-brand fw-bold fs-4 px-2" to="/"> React Ecommerce</NavLink>
@@ -31,6 +33,7 @@ const Navbar = () => {
                         <NavLink to="/login" className="btn btn-outline-dark m-2"><i className="fa fa-sign-in-alt mr-1"></i> Login</NavLink>
                         <NavLink to="/register" className="btn btn-outline-dark m-2"><i className="fa fa-user-plus mr-1"></i> Register</NavLink>
                         <NavLink to="/cart" className="btn btn-outline-dark m-2"><i className="fa fa-cart-shopping mr-1"></i> Cart ({state.length}) </NavLink>
+                        <NavLink to="/user" className="btn btn-outline-dark m-2"><i class="fa fa-user"></i> User </NavLink>
                     </div>
                 </div>
 
