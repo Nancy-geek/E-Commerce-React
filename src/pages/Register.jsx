@@ -7,7 +7,7 @@ import UserContext from '../context/UserContext'
 const Register = () => {
 
     const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
+    // const [password, setPassword] = useState("")
     const [mail, setMail] = useState("")
 
     const {setdata} = useContext(UserContext)

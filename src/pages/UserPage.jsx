@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import UserContext from '../context/UserContext'
-import { Footer, Navbar } from "../components";
+import { Navbar } from "../components";
 import { Link } from 'react-router-dom';
 
 function UserPage() {
