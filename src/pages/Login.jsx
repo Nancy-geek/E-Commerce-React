@@ -15,7 +15,7 @@ const Login = () => {
     // sending this to usercontext using useContext hook for all these , where in that js file  a context is being created and that file is imported in userContextProvide.jsx and seyting up the value 
     const handleSubmit =(e)=> {
       e.preventDefault()
-      setdata({username , mail}) ;       // sending username and password 
+      setdata({ mail}) ;       // sending username and password 
      
     } 
   return (
@@ -34,8 +34,8 @@ const Login = () => {
                   class="form-control"
                   id="floatingInput"
                   placeholder="name@example.com"
-                  value={username}
-                   onChange={ (e)=>setUsername(e.target.value)}
+                  value={mail}
+                   onChange={ (e)=>setMail(e.target.value)}
                 />
               </div>
               <div class="my-3">
