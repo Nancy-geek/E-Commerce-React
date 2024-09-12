@@ -25,9 +25,14 @@ function UserPage() {
        else return (
         <>
         <Navbar/>
-       <div>welcome {user.username} </div>          
-       <div>welcome {user.mail} </div>          
+        <div className='d-flex '>
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/038/820/964/small_2x/man-doing-greet-pose-and-say-hello-free-vector.jpg" alt="" />
+        <div>
+       <div className='fixed  fs-1 text fw-bold my-auto text-center '>welcome {user.username} </div>          
+       <div className='fixed   text fw-bold  my-auto text-center'>Mail id: {user.mail} </div>  
+       </div>        
        {/* // extracting username form user  */}
+       </div>
        </>
        )
 }
